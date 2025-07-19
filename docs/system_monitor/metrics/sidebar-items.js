@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["collect_metrics","get_cpu_usage_per_core"],"struct":["SystemMetrics"]};

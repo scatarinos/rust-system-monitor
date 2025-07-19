@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["NotificationType"],"struct":["Config","EmailConfig","MonitorConfig","NotificationConfig"]};

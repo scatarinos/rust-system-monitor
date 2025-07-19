@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["get_metrics_json","get_state_json","main","receive_webhook","render_dashboard"],"struct":["AppState","DashboardTemplate"]};

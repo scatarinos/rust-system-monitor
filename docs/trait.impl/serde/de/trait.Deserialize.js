@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["system_monitor",[["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.219/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"enum\" href=\"system_monitor/config/enum.NotificationType.html\" title=\"enum system_monitor::config::NotificationType\">NotificationType</a>"],["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.219/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"system_monitor/config/struct.Config.html\" title=\"struct system_monitor::config::Config\">Config</a>"],["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.219/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"system_monitor/config/struct.EmailConfig.html\" title=\"struct system_monitor::config::EmailConfig\">EmailConfig</a>"],["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.219/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"system_monitor/config/struct.MonitorConfig.html\" title=\"struct system_monitor::config::MonitorConfig\">MonitorConfig</a>"],["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.219/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"system_monitor/config/struct.NotificationConfig.html\" title=\"struct system_monitor::config::NotificationConfig\">NotificationConfig</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1661]}

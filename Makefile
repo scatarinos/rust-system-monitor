@@ -30,6 +30,8 @@ docs:
 	cargo doc --no-deps --open
 	rm -rf docs/*
 	cp -r target/doc/* docs/
+	# Create an index.html file to redirect to system_monitor
+	echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=system_monitor/"><title>Redirecting...</title></head><body><p>If you are not redirected automatically, follow this <a href="system_monitor/">link</a>.</p></body></html>' > docs/index.html
 
 
 tailwindcss:
