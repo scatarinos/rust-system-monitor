@@ -26,8 +26,10 @@ start: build run
 test:
 	cargo test
 
-doc:
-	cargo doc --no-deps --open 
+docs:
+	cargo doc --no-deps --open
+	rm -rf docs/*
+	cp -r target/doc/* docs/
 
 
 tailwindcss:
