@@ -57,7 +57,9 @@ async fn get_state_json(State(state): State<Arc<AppState>>) -> Json<Value> {
 
 #[tokio::main]
 async fn main() {
-    println!("Starting Axum Webhook Server...");
+    let port = std::env::var("PORT").unwrap_or_else(|_| "5000".to_string());
+    let host = std::env::var("HOST").unwrap_or_else(|_| "0.0.0.0".to_string());
+
     // Setup tracing
     tracing_subscriber::fmt()
         .with_max_level(Level::INFO)
@@ -67,7 +69,6 @@ async fn main() {
 
     let static_service = Router::new()
         .nest_service("/static", ServeDir::new("./static"));
-        //.nest_service("/static", ServeDir::new("/workspaces/system_monitor/static"));
     
     let dynamic_routes = Router::new()
         .route("/dashboard", get(render_dashboard))
@@ -75,7 +76,7 @@ async fn main() {
         .route("/api/state/lastest", get(get_metrics_json))
         .route("/webhook", post(receive_webhook))
         .route("/", get(render_dashboard))
-        .with_state(state);   // ✅ Apply state only here
+        .with_state(state); 
     
     let app = static_service
         .merge(dynamic_routes)        
@@ -85,12 +86,12 @@ async fn main() {
                 .make_span_with(DefaultMakeSpan::new().level(Level::INFO))
                 // Customize what happens when a response is produced
                 .on_response(DefaultOnResponse::new().level(Level::INFO))
-                // You can also add .on_request(...) for when a request starts
-                // and .on_failure(...) for when a request fails
         );        
-        //.layer(TraceLayer::new_for_http());
     
-    let listener = TcpListener::bind("0.0.0.0:5000").await.unwrap();
+    let server_url = format!("{}:{}", host, port);
+    println!("Starting Webhook Server... {}", server_url);
+
+    let listener = TcpListener::bind(server_url).await.unwrap();
     
     axum::serve(listener, app)
         .await

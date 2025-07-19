@@ -33,6 +33,13 @@ docs:
 	# Create an index.html file to redirect to system_monitor
 	echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=system_monitor/"><title>Redirecting...</title></head><body><p>If you are not redirected automatically, follow this <a href="system_monitor/">link</a>.</p></body></html>' > docs/index.html
 
+sync-docs:
+	rsync -avz --delete target/doc/* docs/
+	cp -r static/ docs/system_monitor/
+
+	# Create an index.html file to redirect to system_monitor
+	echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=system_monitor/"><title>Redirecting...</title></head><body><p>If you are not redirected automatically, follow this <a href="system_monitor/">link</a>.</p></body></html>' > docs/index.html
+
 
 tailwindcss:
 	BROWSERSLIST_IGNORE_OLD_DATA=1 npx tailwindcss -i ./frontend/input.css -o ./static/main.css
