@@ -1,0 +1,21 @@
+{
+  "name": "system_monitor",
+  "version": "1.0.0",
+  "description": "A simple system monitoring tool written in Rust.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001727"
+  }
+}

@@ -1,0 +1,19 @@
+[monitor]
+check_interval_seconds = 5 # Check every 5 seconds
+cpu_threshold_percent = 2.0
+memory_threshold_percent = 50.0
+disk_threshold_percent = 95.0
+
+[notifications]
+type = "webhook" # console | webhook | email
+webhook_url = "http://localhost:5000/webhook"
+
+# Uncomment and fill these for email notifications
+# email_config = {
+#     recipient = "admin@example.com",
+#     smtp_server = "smtp.mailtrap.io", # Use a real SMTP server for production
+#     smtp_port = 2525,
+#     username = "your_smtp_username", # Use environment variables or secure config for production
+#     password = "your_smtp_password", # Use environment variables or secure config for production
+#     from_address = "monitor@yourdomain.com"
+# }
